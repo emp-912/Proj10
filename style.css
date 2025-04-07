@@ -1,0 +1,103 @@
+/* Base styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Game controls styling */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.timer-box,
+.best-box {
+  background: #4a5568;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+button {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #38a169;
+}
+
+/* Puzzle grid layout */
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  background: #e2e8f0;
+  padding: 5px;
+  border-radius: 10px;
+  width: 310px;
+  height: 310px;
+}
+
+/* Puzzle piece styling */
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  background-size: 300px 300px;
+  cursor: grab;
+  transition: transform 0.2s, opacity 0.2s;
+  border: 2px solid transparent;
+}
+
+.puzzle-piece.dragging {
+  opacity: 0.6;
+  cursor: grabbing;
+}
+
+.puzzle-piece.correct {
+  border-color: #48bb78;
+  cursor: default;
+}
+
+/* Success message animation */
+.success {
+  color: #48bb78;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  display: none;
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
